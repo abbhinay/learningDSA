@@ -11,12 +11,13 @@ public class Main {
         list.addToHead(5);
         list.addToHead(6);
         list.addToHead(7);
-        
+
         list.removeFromHead();
 
         list.insertAtEnd(10);
         list.removeAtEnd();
         list.insertAt(4, 22);
+        list.removeAt(4);
 
         System.out.println(list.find(10));
 
