@@ -5,3 +5,8 @@ we start from head and count the no of nodes present after the current head.
 If the count is less than (N-1) then we cannot find the node simply because the N is too large and the no number of nodes are less than what is being asked.
 If the count is more than (N-1) then we simply assign the current node to next node and repeat the process.
 By the time the count is equal to (N-1), the current node will be the node that is the required node. We simply return the data present at that node.
+
+Approach 2:-
+we know that Nth element from end is (M-N+1)th element from the beginning, where M is the no of Nodes.
+In this approach we use hashTable to store the data at each node.
+From the formula we get the Nth element from the end.
