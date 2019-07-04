@@ -16,3 +16,8 @@ Approach 3:-
 In this approach we get the no of nodes present in the linked list and he simply apply the formula for finding the Nth element from back.
 We traverse untill the counter reach the (M-N+1)th node.
 By the time we reach that node we simply return the data present on that node.
+
+Approach 4:-
+We use two iterators. Initially both iterators point to head node.
+When the second iterator has moved N times, the we start iterating first iterator.
+By the time second iterator reach the last element, First iterator point the required node. We simply return the data present on that node.
