@@ -1,3 +1,4 @@
+Problem:-
 Find the Nth node from the end of linked list.
 
 Approach 1:-
@@ -10,3 +11,8 @@ Approach 2:-
 we know that Nth element from end is (M-N+1)th element from the beginning, where M is the no of Nodes.
 In this approach we use hashTable to store the data at each node.
 From the formula we get the Nth element from the end.
+
+Approach 3:-
+In this approach we get the no of nodes present in the linked list and he simply apply the formula for finding the Nth element from back.
+We traverse untill the counter reach the (M-N+1)th node.
+By the time we reach that node we simply return the data present on that node.
