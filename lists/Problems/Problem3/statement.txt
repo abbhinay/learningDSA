@@ -1,2 +1,5 @@
 Problem:-
 If there is a loop inside linked list return the starting Node of that loop.
+
+Approach 1:-
+Just as we found if the linked list contains a loop, we assign head to slow iterator and now both iterator moves at same speed. The node at which both iterator meets again shall be the starting of the loop.
