@@ -1,2 +1,11 @@
 Problem:-
 Reverse a singly Linked List.
+
+Approach 1:-
+This approach is very similar to swapping two numbers.
+We take 2 iterators current and previous. Initially we assign head to current iterator and null to previous iterator. We iterate throughout the linked list by using current iterator.
+Inside the loop we create a next node and assign next node of current to it.
+Then we assign previous iterator as the next node of current.
+Then we assign current to previous.
+Then we assign next to current.
+In the end we return the previous iterator.
