@@ -1,2 +1,5 @@
 Problem:-
 If there is a loop inside linked list return the length of that loop.
+
+Approach 1:-
+Just as we found the starting of loop in previous problem,we stop traversing the slow iterator and fast iterator starts moving at previous speed. A counter is also used to track the movement of fast iterator. By the time the fast iterator arrives at the same position as slow iterator, we return the counter.
