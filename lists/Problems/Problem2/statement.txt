@@ -4,3 +4,6 @@ Find if the linked list contain a cycle or not.
 Approach 1:-
 we traverse the linked list and save every nextNode onject in HashTable. While saving the object we also check if that object is already present or not.
 If that object is already prsent then we have found a loop and we return from the method.
+
+Approach 2:-
+In this approach we use two iterators. the slow iterator iterates at normal speed while the fast iterator moves at twice the speed of first iterator. If the linked list contains a cycle, the two iterators are bound to meet at some point. When that happens, we simply return out of the method.
