@@ -1,2 +1,6 @@
 Problem:-
 Find if the linked list contain a cycle or not.
+
+Approach 1:-
+we traverse the linked list and save every nextNode onject in HashTable. While saving the object we also check if that object is already present or not.
+If that object is already prsent then we have found a loop and we return from the method.
