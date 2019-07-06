@@ -1,2 +1,5 @@
 Problem 7:- 
 find the middle node of linked list.
+
+Approach 1:-
+First we find the length of linked list the we traverse untill the counter reach to the half of the length. After that we simply return the node or the data that is present on that node.
