@@ -1,2 +1,6 @@
 Problem 9:-
 given 2 sorted linked list, we need to merge the into third list in sorted order.
+
+Approach 1:-
+we traverse the two linked list and compare data present at each node. We increment the iterator only when we have assigned that data in third linked list.
+Since we do not know how many nodes are present in each list so, at some point we will get a null point exception which we have to catch. When we hit the exception, we simply put all the remaining data of other list which does not hit the null during the traversal.
