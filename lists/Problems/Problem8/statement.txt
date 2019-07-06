@@ -1,2 +1,5 @@
 Problem 8:-
 display a linked list from the end.
+
+Approach 1:-
+we call the method recursively untill the iterator point to null. when the iterator point to null then we simply return from the method. when the call ends, we print the data on the node. Due to recursive calls the data present on last node printed first.
