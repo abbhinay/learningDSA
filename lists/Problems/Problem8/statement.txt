@@ -1,0 +1,2 @@
+Problem 8:-
+display a linked list from the end.
