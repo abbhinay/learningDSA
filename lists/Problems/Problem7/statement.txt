@@ -3,3 +3,6 @@ find the middle node of linked list.
 
 Approach 1:-
 First we find the length of linked list the we traverse untill the counter reach to the half of the length. After that we simply return the node or the data that is present on that node.
+
+Approach 2:-
+In this approach we use two iterators. The first iterator moves at normal speed while the second iterator moves at twice the speed of first iterator. By the time the fast iterator reach at the end of linked list, the first iterator point at the middle node of linked list. We simply return that node or the data present at that node.
