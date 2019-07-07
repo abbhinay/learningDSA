@@ -1,0 +1,2 @@
+Problem :-
+check if the linked list is palindrom or not.
