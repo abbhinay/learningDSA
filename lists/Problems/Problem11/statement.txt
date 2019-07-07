@@ -1,2 +1,10 @@
 Problem :-
 check if the linked list is palindrom or not.
+
+Approach 1:-
+we find the length of linke dlist from length method and traverse up to the middle point. 
+After that if the list contains even no of nodes we pass the next node as a parameter to reverse the remaining list.
+If the no of nodes are odd then we pass a node next to the current node, leaving the middle node of linked list.
+Once half the linked list is reversed then we compare the data on the first half and second half of linked list.
+If at any point, we find any mismatch in the data then we return false as return. 
+Else we return true.
