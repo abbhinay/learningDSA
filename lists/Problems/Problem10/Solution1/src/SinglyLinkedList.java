@@ -108,34 +108,19 @@ public class SinglyLinkedList {
 
 class Methods extends SinglyLinkedList{
 
-    public void merge(Node firstHead, Node secondHead, Node thirdHead){
-        while(firstHead!=null && secondHead!=null){
-            try{
-                if(firstHead.getData()<=secondHead.getData()){
-                    addToHead(firstHead.getData());
-                    firstHead = firstHead.getNextNode();
-                }
-                if(firstHead.getData()>=secondHead.getData()){
-                    addToHead(secondHead.getData());
-                    secondHead = secondHead.getNextNode();
-                }
-            }catch (Exception e){
-                if(firstHead==null){
-                    while(secondHead!=null){
-                        addToHead(secondHead.getData());
-                        secondHead = secondHead.getNextNode();
-                    }
-                }
-
-                if(secondHead == null){
-                    while(firstHead!=null){
-                        addToHead(firstHead.getData());
-                        firstHead = firstHead.getNextNode();
-                    }
-                }
-            }
-
+    public Node reverseInPair(Node current, Node next){
+        boolean timeToReturn = false;
+        if(next.getNextNode() == null || next.getNextNode().getNextNode()==null){
+            timeToReturn = true;
         }
 
+        int temp = next.getData();
+        next.setData(current.getData());
+        current.setData(temp);
+        if(timeToReturn){
+            return current;
+        }
+        reverseInPair(next.getNextNode(), next.getNextNode().getNextNode());
+        return current;
     }
 }
