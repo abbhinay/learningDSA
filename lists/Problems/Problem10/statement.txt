@@ -1,2 +1,8 @@
 Problem 10:-
 Reverse the linked list in pairs. If you have a linked list that holds 1 -> 2 -> 3 -> 4 -> x, then after the function has been called the linked list would hold 2 -> 1 -> 4 -> 3 -> x.
+
+Approach 1:-
+Here we use recursion. we call the method with head and the node after head. The method accepts two node as current and next node. The method also returns the current node.
+we simply swipe the values present at two nodes and returns the current node.
+As for the breaking point of recursion, we check if the next node of next is null or not for the list containing even no of nodes. If its null then we perform the swipe for the given nodes and returns after that. We no longer call the method after that.
+For the list containing odd no of nodes we have to check for the node present after two position.
