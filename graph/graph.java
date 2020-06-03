@@ -25,7 +25,7 @@ class graph {
         addEdge(graph, 10, 2);
         addEdge(graph, 10, 3);
         addEdge(graph, 10, 6);
-        BFS(graph);
+        DFS(graph);
     }
 
     public static void addEdge(HashMap<Integer, ArrayList<Integer>> graph, int source, int destination) {
@@ -45,6 +45,23 @@ class graph {
                 ArrayList<Integer> list = graph.get(temp);
                 for (int i = 0; i < list.size(); i++) {
                     queue.add(list.get(i));
+                }
+            }
+        }
+    }
+
+    public static void DFS(HashMap<Integer, ArrayList<Integer>> graph) {
+        Stack<Integer> stack = new Stack<>();
+        stack.push(1);
+        boolean[] visited = new boolean[11];
+        while (!stack.isEmpty()) {
+            int temp = stack.pop();
+            if (!visited[temp]) {
+                System.out.print(temp + " ");
+                visited[temp] = true;
+                ArrayList<Integer> list = graph.get(temp);
+                for (int i = 0; i < list.size(); i++) {
+                    stack.push(list.get(i));
                 }
             }
         }
