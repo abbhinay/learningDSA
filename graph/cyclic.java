@@ -1,70 +1,64 @@
 import java.util.*;
 
-//This graph is undirected graph
-class graph {
+public class cyclic {
     public static void main(String[] args) {
         HashMap<Integer, ArrayList<Integer>> graph = new HashMap<>();
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 0; i < 4; i++) {
             ArrayList<Integer> list = new ArrayList<>();
             graph.put(i, list);
         }
-        addEdge(graph, 1, 9);
-        addEdge(graph, 1, 4);
-        addEdge(graph, 1, 6);
+        addEdge(graph, 2, 0);
+        addEdge(graph, 0, 1);
+        addEdge(graph, 1, 2);
         addEdge(graph, 2, 3);
-        addEdge(graph, 2, 8);
-        addEdge(graph, 2, 9);
-        addEdge(graph, 3, 1);
-        addEdge(graph, 3, 4);
-        addEdge(graph, 3, 7);
-        addEdge(graph, 4, 8);
-        addEdge(graph, 5, 4);
-        addEdge(graph, 6, 9);
-        addEdge(graph, 7, 10);
-        addEdge(graph, 8, 5);
-        addEdge(graph, 9, 10);
-        addEdge(graph, 10, 2);
-        addEdge(graph, 10, 3);
-        addEdge(graph, 10, 6);
-        DFS(graph);
+        addEdge(graph, 3, 3);
+        addEdge(graph, 0, 2);
+        // isCyclicUsingBFS(graph);
+        isCyclicUsingDFS(graph);
     }
 
     public static void addEdge(HashMap<Integer, ArrayList<Integer>> graph, int source, int destination) {
         graph.get(source).add(destination);
-        graph.get(destination).add(source);
     }
 
-    public static void BFS(HashMap<Integer, ArrayList<Integer>> graph) {
+    public static void isCyclicUsingBFS(HashMap<Integer, ArrayList<Integer>> graph) {
         Queue<Integer> queue = new LinkedList<>();
-        boolean[] visited = new boolean[11];
-        queue.add(5);
+        boolean[] visited = new boolean[4];
+        int counter = 0;
+        queue.add(2);
         while (!queue.isEmpty()) {
             int temp = queue.poll();
             if (!visited[temp]) {
-                System.out.print(temp + " ");
                 visited[temp] = true;
                 ArrayList<Integer> list = graph.get(temp);
                 for (int i = 0; i < list.size(); i++) {
                     queue.add(list.get(i));
                 }
+            } else {
+                counter++;
+                System.out.println(temp + " ");
             }
         }
+        System.out.println(counter);
     }
 
-    public static void DFS(HashMap<Integer, ArrayList<Integer>> graph) {
+    public static void isCyclicUsingDFS(HashMap<Integer, ArrayList<Integer>> graph) {
         Stack<Integer> stack = new Stack<>();
-        stack.push(1);
-        boolean[] visited = new boolean[11];
+        boolean[] visited = new boolean[4];
+        int counter = 0;
+        stack.push(2);
         while (!stack.isEmpty()) {
             int temp = stack.pop();
             if (!visited[temp]) {
-                System.out.print(temp + " ");
                 visited[temp] = true;
                 ArrayList<Integer> list = graph.get(temp);
                 for (int i = 0; i < list.size(); i++) {
                     stack.push(list.get(i));
                 }
+            } else {
+                counter++;
             }
         }
+        System.out.println(counter);
     }
 }
