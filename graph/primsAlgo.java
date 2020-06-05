@@ -48,12 +48,14 @@ public class primsAlgo {
                 int min = Integer.MAX_VALUE;
                 int number = temp;
                 for (Map.Entry m : list.entrySet()) {
-                    if (distance[(int) m.getKey()] > (int) m.getValue()) {
-                        distance[(int) m.getKey()] = (int) m.getValue();
-                        parent[(int) m.getKey()] = temp;
-                        if (distance[(int) m.getKey()] < min && !visited[(int) m.getKey()]) {
-                            min = distance[(int) m.getKey()];
-                            number = (int) m.getKey();
+                    int destination = (int) m.getKey();
+                    int weight = (int) m.getValue();
+                    if (distance[destination] > weight) {
+                        distance[destination] = weight;
+                        parent[destination] = temp;
+                        if (distance[destination] < min && !visited[destination]) {
+                            min = distance[destination];
+                            number = destination;
                         }
                     }
                 }
