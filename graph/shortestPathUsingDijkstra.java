@@ -1,5 +1,6 @@
 import java.util.*;
 
+//https://www.youtube.com/watch?v=JcN_nq1EAr4
 public class shortestPathUsingDijkstra {
     public static void main(String[] args) {
         HashMap<Integer, ArrayList<Integer>> graph = new HashMap<>();
